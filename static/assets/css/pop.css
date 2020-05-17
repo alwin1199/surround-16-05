@@ -44,8 +44,8 @@ h1 {
   padding: 20px;
   background: #fff;
   border-radius: 5px;
-  width: 70%;
-  height:60%;
+  width: 90%;
+  height:80%;
   position: relative;
   transition: all 5s ease-in-out;
 }
@@ -69,7 +69,7 @@ h1 {
   color: #06D85F;
 }
 .popup .content {
-  max-height: 30%;
+  max-height: 80%;
   overflow: auto;
 }
 

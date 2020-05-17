@@ -2,14 +2,15 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
-# Create your views here.
+from sklearn.linear_model import LinearRegression
+import numpy as np
+import subprocess
 from django.template import loader
 import os
 
 def index(request):
-    lookup = request.GET.get('q')
     if request.GET.get('q1'):
-        print("\n The machine has learned to draw a line from (-x,-y) tp (x,y)")
+        rslt="The machine has learned to draw a line"
         # val = int(input("\nEnter the value of x(y=x): "));
         # val = int(10)
         val = int(request.GET.get('q1'))
@@ -18,9 +19,10 @@ def index(request):
         plt.xlabel('x', color='#1C2833')
         plt.ylabel('y', color='#1C2833')
         plt.grid()
-        # plt.savefig("plot_circle_matplotlib_01.png", bbox_inches='tight')
-        plt.show()
-        return render(request, 'index.html')
+        plt.savefig("static/images/Gout.png", bbox_inches='tight')
+        # plt.show()
+
+        return render(request, 'index.html', {'flagL': rslt})
     if request.GET.get('x') and request.GET.get('y'):
         print("The machine has learned to identify if the points specified is inside or outside the circle")
         # xval = int(input("\nEnter the value of x: "));
@@ -28,11 +30,11 @@ def index(request):
         xval = int(request.GET.get('x'))
         yval = int(request.GET.get('y'))
         if (xval * xval) + (yval * yval) > 25:
-            print("Outside circle")
+            rslt="Outside circle"
             xlimt = xval + 1
             ylimt = yval + 1
         else:
-            print("Inside circle")
+            rslt="Inside circle"
             xlimt = ylimt = 6
         circle1 = plt.Circle((0, 0), 5, color='r')
 
@@ -45,19 +47,20 @@ def index(request):
         plt.plot(xval, yval)
         plt.grid(linestyle='--')
         plt.title('Circle with radius 5', fontsize=8)
-        # plt.savefig("plot_circle_matplotlib_01.png", bbox_inches='tight')
-        plt.show()
-        return render(request, 'index.html')
+        plt.savefig("static/images/Gout.png", bbox_inches='tight')
+        # plt.show()
+
+        return render(request, 'index.html', {'flag': rslt})
 
     if request.GET.get('a') and request.GET.get('b'):
         print("The machine has learned to identify if the points specified is inside or outside the square")
         xval = int(request.GET.get('a'))
         yval = int(request.GET.get('b'))
         if xval >= -4 and xval <= 4 and yval >= -4 and yval <= 4:
-            print("Inside")
+            rslt="Inside Square"
             xlimt = ylimt = 6
         else:
-            print("Outside")
+            rslt="Outside Outside"
             xlimt = xval + 1
             ylimt = yval + 1
 
@@ -79,20 +82,59 @@ def index(request):
         plt.plot(xval, yval)
         plt.grid(linestyle='--')
         plt.title('Square with width 5', fontsize=8)
-        # plt.savefig("plot_circle_matplotlib_01.png", bbox_inches='tight')
-        plt.show()
-        return render(request, 'index.html')
+        plt.savefig("static/images/Gout.png", bbox_inches='tight')
+        #plt.show()
 
-    print("=============")
+        return render(request, 'index.html',{'flag':rslt})
 
-    if lookup == '1':
-        print(lookup)
-        os.system('cmd /k python detect.py --image kid1.jpg')
-        return render(request, 'index.html')
-    elif lookup=='2':
-        os.system('cmd /k python detect.py --image girl1.jpg')
+    if request.GET.get('addx') and request.GET.get('addy'):
+        X = [[2, 3], [1, 5], [5, 6]]
+        Y = [5, 6, 11]
+        model = LinearRegression()
+        model.fit(X, Y)
+        first = int(request.GET.get('addx'))
+        sec = int(request.GET.get('addy'))
+        m = np.asarray(first, dtype='float64')
+        n = np.asarray(sec, dtype='float64')
+        b = (model.predict(np.array([m, n]).reshape(1, -1)))
+        return render(request, 'index.html', {'totaladd': b})
+    if request.GET.get('subx') and request.GET.get('suby'):
+        X = [[5, 3], [9, 5], [7, 6]]
+        Y = [2, 4, 1]
+        model = LinearRegression()
+        model.fit(X, Y)
+        first = int(request.GET.get('subx'))
+        sec = int(request.GET.get('suby'))
+        m = np.asarray(first, dtype='float64')
+        n = np.asarray(sec, dtype='float64')
+        b = (model.predict(np.array([m, n]).reshape(1, -1)))
+        return render(request, 'index.html',{'totalsub': b})
 
-        return render(request, 'index.html')
+    #print("xx",request.GET.get('x'))
+
+    #if request.POST.get('x'):
+     #   print("YEA")
+    #if request.GET.get('data'):
+     #   print(request.GET.get('data'))
+    if request.GET.get('age'):
+        age=int(request.GET.get('age'))
+
+        if age==1:
+            subprocess.call('python detect.py --image kid1.jpg')
+            print("lookup")
+            ageresult=1
+            return render(request, 'index.html',{'ageresult':ageresult})
+        elif age==2:
+            subprocess.call('python detect.py --image girl1.jpg')
+            ageresult = 1
+            return render(request, 'index.html', {'ageresult': ageresult})
+        elif age==3:
+            subprocess.call('python detect.py --image man1.jpg')
+            ageresult = 1
+            return render(request, 'index.html', {'ageresult': ageresult})
+        else:
+            return render(request, 'index.html')
 
     else:
         return render(request, 'index.html')
+
