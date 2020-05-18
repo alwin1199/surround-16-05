@@ -9,6 +9,12 @@ from django.template import loader
 import os
 
 def index(request):
+    return render(request,'index.html')
+
+def aipipeline(request):
+    return render(request,'aipipeline.html')
+
+def example(request):
     if request.GET.get('q1'):
         rslt="The machine has learned to draw a line"
         # val = int(input("\nEnter the value of x(y=x): "));
@@ -22,7 +28,7 @@ def index(request):
         plt.savefig("static/images/Gout.png", bbox_inches='tight')
         # plt.show()
 
-        return render(request, 'index.html', {'flagL': rslt})
+        return render(request, 'example.html', {'flagL': rslt})
     if request.GET.get('x') and request.GET.get('y'):
         print("The machine has learned to identify if the points specified is inside or outside the circle")
         # xval = int(input("\nEnter the value of x: "));
@@ -50,7 +56,7 @@ def index(request):
         plt.savefig("static/images/Gout.png", bbox_inches='tight')
         # plt.show()
 
-        return render(request, 'index.html', {'flag': rslt})
+        return render(request, 'example.html', {'flag': rslt})
 
     if request.GET.get('a') and request.GET.get('b'):
         print("The machine has learned to identify if the points specified is inside or outside the square")
@@ -85,7 +91,7 @@ def index(request):
         plt.savefig("static/images/Gout.png", bbox_inches='tight')
         #plt.show()
 
-        return render(request, 'index.html',{'flag':rslt})
+        return render(request, 'example.html',{'flag':rslt})
 
     if request.GET.get('addx') and request.GET.get('addy'):
         X = [[2, 3], [1, 5], [5, 6]]
@@ -97,7 +103,7 @@ def index(request):
         m = np.asarray(first, dtype='float64')
         n = np.asarray(sec, dtype='float64')
         b = (model.predict(np.array([m, n]).reshape(1, -1)))
-        return render(request, 'index.html', {'totaladd': b})
+        return render(request, 'example.html', {'totaladd': b})
     if request.GET.get('subx') and request.GET.get('suby'):
         X = [[5, 3], [9, 5], [7, 6]]
         Y = [2, 4, 1]
@@ -108,7 +114,7 @@ def index(request):
         m = np.asarray(first, dtype='float64')
         n = np.asarray(sec, dtype='float64')
         b = (model.predict(np.array([m, n]).reshape(1, -1)))
-        return render(request, 'index.html',{'totalsub': b})
+        return render(request, 'example.html',{'totalsub': b})
 
     #print("xx",request.GET.get('x'))
 
@@ -123,18 +129,18 @@ def index(request):
             subprocess.call('python detect.py --image kid1.jpg')
             print("lookup")
             ageresult=1
-            return render(request, 'index.html',{'ageresult':ageresult})
+            return render(request, 'example.html',{'ageresult':ageresult})
         elif age==2:
             subprocess.call('python detect.py --image girl1.jpg')
             ageresult = 1
-            return render(request, 'index.html', {'ageresult': ageresult})
+            return render(request, 'example.html', {'ageresult': ageresult})
         elif age==3:
             subprocess.call('python detect.py --image man1.jpg')
             ageresult = 1
-            return render(request, 'index.html', {'ageresult': ageresult})
+            return render(request, 'example.html', {'ageresult': ageresult})
         else:
-            return render(request, 'index.html')
+            return render(request, 'example.html')
 
     else:
-        return render(request, 'index.html')
+        return render(request, 'example.html')
 

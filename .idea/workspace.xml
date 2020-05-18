@@ -20,16 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1278d6f7-2a51-4269-a513-86986a02a153" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/man1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/detect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/file.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/box.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/box.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/pop.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/pop.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/assets/js/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/Gout.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/Gout.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/file.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/file.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/surndx16/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/surndx16/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
@@ -51,7 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -81,6 +76,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1589180080807">
