@@ -89,7 +89,7 @@ section,
 .drop-effect .drag-item,
 .drop-effect .drop-item {
   width: 20%;
-  margin: 0% 0.8% 0.8% 0.6%;
+  margin: 0% 0% 0.8% 0%;
   float: left;
   text-align: center;
   overflow: hidden;
@@ -122,22 +122,27 @@ section,
 }
 /*drop related styles*/
 
-.drop-effect .drop-zone {}
+.drop-effect .drop-zone {
+
+}
 
 .drop-effect .drop-zone .drop {
-  width: 296px;
-  height: 264px;
-  padding-bottom: 100%;
+
+ width:200px;
+  height:200px;
+padding-right:10px;
 }
 
 .drop-effect .drop-zone .drop.drop-active {
+
  }
 .drop-effect .drop-zone .drop.correct {
-  
+
 }
 .drop-effect .drop-zone img{
-  width: 100%;
-  height: auto;
+width:200px;
+  height:200px;
+
 }
 
 .ie-message {

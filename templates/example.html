@@ -88,7 +88,7 @@
 		<div class='square' data-image={%static "image" %} style="background-color:#ff5151">
 			<div class="square-container">
 				<div class="align-center"><img src={%static "images/b" %} class="boxshadow" alt=""></div>
-				<h2 class="textshadow">?</h2>
+				<h2 class="textshadow">Color Detection</h2>
 				<h2 class="textshadow">.......</h2>
 			</div>
 			<div class="flip-overlay"></div>
@@ -106,7 +106,7 @@
 		<div class='square' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png" style="background-color:#8cba51">
 			<div class="square-container">
 				<div class="align-center"><img src={%static "images/b" class="boxshadow" %} alt=""></div>
-				<h2 class="textshadow">?</h2>
+				<h2 class="textshadow">Chat Bot</h2>
 				<h2 class="textshadow">........</h2>
 			</div>
 			<div class="flip-overlay"></div>
@@ -253,11 +253,20 @@
 </div>
 <div id="popup4" class="overlay">
 	<div class="popup">
-		<h2>Here i am</h2>
+		<h2 id="elements">Color Detection</h2>
 		<a class="close" href="#">&times;</a>
-		<div class="content">
-			Thank to pop me out of that button, but now i'm done so you can close this window.
-		</div>
+			<div class="header">
+				<h3>1: </h3><img  id="1" style="height:250px;width:250px" src="{%static "/images/man1.jpg" %}">
+				<h3>2: </h3><img id="2" style="height:250px;width:250px" src="{%static "/images/colorpic.jpg" %}" >
+					<form method="GET" style="margin-left: 40%;margin-right: 40%;margin-top: 10%;margin-bottom: 5%">
+
+						<!--<div id="dropContainer" style="border:1px solid black;height:100px;">
+						Drop Here
+						</div>-->
+						<input type="text" name="color" id="id_q"  >
+						<button type="submit">send</button>
+					</form>
+			</div>
 	</div>
 </div>
 <div id="popup5" class="overlay">
@@ -265,13 +274,15 @@
 		<h2>Here i am</h2>
 		<a class="close" href="#">&times;</a>
 		<div class="content">
-			Thank to pop me out of that button, but now i'm done so you can close this window.
+			<form method="GET" style="margin-left: 40%;margin-right: 40%;margin-top: 10%;margin-bottom: 5%">
+				<button name="chat" type="submit">Lets Chat</button>
+			</form>
 		</div>
 	</div>
 </div>
 <div id="popup6" class="overlay">
 	<div class="popup">
-		<h2>Here i am</h2>
+		<h2>Chat Bot</h2>
 		<a class="close" href="#">&times;</a>
 		<div class="content">
 			TEst

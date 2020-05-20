@@ -122,9 +122,16 @@ def example(request):
      #   print("YEA")
     #if request.GET.get('data'):
      #   print(request.GET.get('data'))
+    if request.GET.get('color'):
+        color=int(request.GET.get('color'))
+        if color==1:
+            subprocess.call('python color_detection.py --image man1.jpg')
+            return render(request, 'example.html')
+    if request.GET.get('chat'):
+        subprocess.call('python chat.py')
+        return render(request, 'example.html')
     if request.GET.get('age'):
         age=int(request.GET.get('age'))
-
         if age==1:
             subprocess.call('python detect.py --image kid1.jpg')
             print("lookup")
