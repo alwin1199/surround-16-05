@@ -24,9 +24,9 @@ def example(request):
         plt.title('Graph of y-x=0')
         plt.xlabel('x', color='#1C2833')
         plt.ylabel('y', color='#1C2833')
-        plt.grid()
+        plt.grid(linestyle='--')
         plt.savefig("static/images/Gout.png", bbox_inches='tight')
-        # plt.show()
+        #plt.show()
 
         return render(request, 'example.html', {'flagL': rslt})
     if request.GET.get('x') and request.GET.get('y'):
@@ -93,9 +93,11 @@ def example(request):
 
         return render(request, 'example.html',{'flag':rslt})
 
-    if request.GET.get('addx') and request.GET.get('addy'):
+    if request.GET.get('addx') and request.GET.get('addy') and request.GET.get('addusr'):
         X = [[2, 3], [1, 5], [5, 6]]
         Y = [5, 6, 11]
+        usum=int(request.GET.get('addusr'))
+        #print(usum)
         model = LinearRegression()
         model.fit(X, Y)
         first = int(request.GET.get('addx'))
@@ -103,35 +105,46 @@ def example(request):
         m = np.asarray(first, dtype='float64')
         n = np.asarray(sec, dtype='float64')
         b = (model.predict(np.array([m, n]).reshape(1, -1)))
-        return render(request, 'example.html', {'totaladd': b})
-    if request.GET.get('subx') and request.GET.get('suby'):
+        if first+sec==usum:
+            rsltA="YaY!!!";
+            #print("OK")
+        else:
+            rsltA = "Uh Oh!!!You made a mistake"
+        return render(request, 'example.html', {'totaladd': b,'rsltadd':rsltA})
+    if request.GET.get('subx') and request.GET.get('suby') and request.GET.get('subusr'):
         X = [[5, 3], [9, 5], [7, 6]]
         Y = [2, 4, 1]
         model = LinearRegression()
         model.fit(X, Y)
         first = int(request.GET.get('subx'))
         sec = int(request.GET.get('suby'))
+        udiff=int(request.GET.get('subusr'))
         m = np.asarray(first, dtype='float64')
         n = np.asarray(sec, dtype='float64')
         b = (model.predict(np.array([m, n]).reshape(1, -1)))
-        return render(request, 'example.html',{'totalsub': b})
+        if first - sec == udiff:
+            rsltS = "YaY!!!";
+            # print("OK")
+        else:
+            rsltS = "Uh Oh!!!You made a mistake"
+        return render(request, 'example.html', {'totalsub': b, 'rsltsub': rsltS})
 
-    #print("xx",request.GET.get('x'))
-
-    #if request.POST.get('x'):
-     #   print("YEA")
-    #if request.GET.get('data'):
-     #   print(request.GET.get('data'))
     if request.GET.get('color'):
         color=int(request.GET.get('color'))
+
         if color==1:
             subprocess.call('python color_detection.py --image man1.jpg')
             return render(request, 'example.html')
-    if request.GET.get('chat'):
-        subprocess.call('python chat.py')
-        return render(request, 'example.html')
+        elif color==2:
+            subprocess.call('python color_detection.py --image colorpic.jpg')
+            return render(request, 'example.html')
+        else:
+            return render(request, 'example.html')
+
+
     if request.GET.get('age'):
         age=int(request.GET.get('age'))
+        print("OK")
         if age==1:
             subprocess.call('python detect.py --image kid1.jpg')
             print("lookup")
@@ -150,4 +163,11 @@ def example(request):
 
     else:
         return render(request, 'example.html')
+
+def chat(request):
+    if request.GET.get('chat'):
+        print("ok")
+        subprocess.call('python chat.py')
+        return render(request, 'example.html')
+    return render(request, 'example.html')
 

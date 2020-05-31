@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('example', views.example),
-    path('aipipeline', views.aipipeline)
+    path('aipipeline', views.aipipeline),
+    #path(chat,views.chat)
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
