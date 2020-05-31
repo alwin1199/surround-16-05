@@ -8,7 +8,7 @@ h1 {
 }
 
 .box {
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
   background: rgba(255,255,255,0.2);
   padding: 35px;
@@ -44,17 +44,20 @@ h1 {
   padding: 20px;
   background: #fff;
   border-radius: 5px;
-  width: 90%;
+  width: 80%;
   height:80%;
   position: relative;
   transition: all 5s ease-in-out;
+  background-color:#FFFFCC;
 }
 
 .popup h2 {
   margin-top: 0;
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
+ overflow:hidden;
 }
+
 .popup .close {
   position: absolute;
   top: 20px;
@@ -69,8 +72,8 @@ h1 {
   color: #06D85F;
 }
 .popup .content {
-  max-height: 80%;
-  overflow: auto;
+  max-height: 30%;
+  overflow: none;
 }
 
 @media screen and (max-width: 700px){

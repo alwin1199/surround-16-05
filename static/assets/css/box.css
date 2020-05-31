@@ -276,18 +276,3 @@
       margin-top:10px;
       font-weight:700;
 }
-
-.inline-block {
-   display: inline-block;
-}
-.header img {
-  float: left;
-  width: 100px;
-  height: 100px;
-  background: #555;
-}
-
-.header h3 {
-  float: left;
-
-}

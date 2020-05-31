@@ -1,24 +1,26 @@
-{% load static %}
 <html>
-
+{% load static %}
     <head>
         <title>AI Literacy Tool</title>
         <style>
             .sitelogo {
                 text-align: center;
             }
+			
         </style>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href={%static "main.css" %}>
-        
+        <link rel="stylesheet" href={%static "assets/css/main.css" %}>
+        <link rel="stylesheet" href={%static "assets/css/pop.css" %}>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href={%static "assets/css/1.css" %}>
+		
 
     </head>
     <body>
         <div class="wrapper">
             <div class="sitelogo">
-              <img src={%static "images/newlogo.png" %}>
-            </div>
+              <a href="/"> <img src={%static "images/newlogo.png" %}>
+            </div></a>
         
             <div class="box">
                 <div></div>
@@ -37,13 +39,13 @@
             <div class="w3-container">
                 <div class="w3-display-container" style="height: 400px;">
                     <div class="w3-display-topleft" style="height: 30%;width: 30%;">
-                        <div class="w3-panel w3-card w3-red" ><h3 style="font-size: 20px;"><b>WHAT IS AI?</b></h3><p style="font-size: 18px;text-align:justify;"><img style="height: 100px;width:100px;float: left;" src={%static "images/giphy.gif" %} > Artificial intelligence (AI) is wide-ranging branch of computer science concerned with building smart machines capable of performing tasks that typically require human intelligence.</p></div>
+                        <div class="w3-panel w3-card w3-red" ><h3 style="font-size: 20px;"><b>WHAT IS AI?</b></h3><p style="font-size: 18px;text-align:justify;"><img style="height: 100px;width:100px;float: left;" src={%static "images/giphy.gif" %} >  Artificial intelligence (AI) is wide-ranging branch of computer science concerned with building smart machines capable of performing tasks that typically require human intelligence.</p></div>
                     </div> 
                     
                     <div class="w3-display-topright" style="height: 30%;width: 30%;">
                         <div class="w3-panel w3-card w3-Pale-blue" ><h3 style="text-align: center;">FEATURES OF AI</h3>
                             <div style="margin-left: 45px;">
-                            <p style="font-size: 20px;">1.Deep Learning &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.Quantum Computer</p><img style="height: 200px;width:200px;float: left;"  src={%static "images/deeplearning.gif" %} >&nbsp;&nbsp;&nbsp;&nbsp;<img style="height: 200px;width:200px;" src={%static "images/quant.gif" %} >
+                            <p style="font-size: 20px;">1.Deep Learning &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.Quantum Computer</p><img style="height: 200px;width:200px;float: left;" src={%static "images/deeplearning.gif" %} >&nbsp;&nbsp;&nbsp;&nbsp;<img style="height: 200px;width:200px;" src={%static "images/quant.gif" %} >
                             <p style="font-size: 20px;">3.Facial Recognition &nbsp;&nbsp;&nbsp;4.Cloud Computing</p><img style="height: 200px;width:200px;" src={%static "images/facial.gif" %} >&nbsp;&nbsp;&nbsp;&nbsp;
                             <img style="height: 200px;width:200px;" src={%static "images/cloudcomputing.gif" %} >
                             </div>
@@ -66,18 +68,128 @@
                     <div class="w3-display-bottomleft" style="height: 30%;width: 30%;">
                         <div class="w3-panel w3-card w3-lime" ><h3 style="text-align: center;">APPLICATIONS OF AI</h3>
                             <div style="margin-left: 10px;">
-                            <p style="font-size: 18px;">1.Apple Siri &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.Google home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.Tesla Cars</p><img style="height: 150px;width:150px;float: left;" src={%static "images/siri.gif" %} >&nbsp;&nbsp;&nbsp;&nbsp;<img style="height: 150px;width:150px;" src={%static "images/googlehome.gif" %} >&nbsp;&nbsp;&nbsp;<img style="height: 150px;width:150px;" src={%static "images/tesla.gif" %} >
+                            <p style="font-size: 18px;">1.Apple Siri &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.Google home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.Tesla Cars</p><img style="height: 150px;width:150px;float: left;" src={%static "images/siri.gif" %} >&nbsp;&nbsp;&nbsp;&nbsp;<img style="height: 150px;width:150px;" src={%static "images/googlehome.gif" %}>&nbsp;&nbsp;&nbsp;<img style="height: 150px;width:150px;"  src={%static "images/tesla.gif" %}>
                             </div>
                             <br><br>
                          </div>
                         </div>
                 
-                    <button class="button button3" style="margin-top:30%;margin-left: 42%"><a href="/aipipeline"><b>Explore More</b></button>
-                </div>
+                    <button class="button button3" style="margin-top:30%;margin-left: 43%;height:50px;"><a href="#popup2"><b>Explore More</b></button>
+                </div>  
                 
             </div>
             
         </div>   
-        
+   <div id="popup2" class="overlay" >
+	<div class="popup" style="overflow:auto;">
+		
+		<a class="close" href="#">&times;</a>
+        <div class="content">
+
+                          <div style="text-align:center;" >
+                            <div style="float:left;">
+                                         <img height="500" width="800" src={%static "images/kk.jpg" %}>
+
+                            </div>
+                              <div class="inner">
+                            <h1 style=" color:black;margin-top:20px;">How Machine Works ? </h1>
+
+                                    <video width="400" height="300"   style="text-align:center;margin-top:20px;" controls>
+                                      <source type="video/mp4" src={%static "video/bb.mp4" %}>
+                                    </video>
+
+
+                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                                        <section id="three" class="wrapper">
+
+
+
+                                    <article class="page">
+                  <article class="main">
+                    <h2 style="text-align:center; color:black;margin-top:20px;">Arrange AI Pipeline Steps in correct Order</h2>
+                   <br><br>
+
+                    <article class="drop-effect cf">
+                      <div class="container">
+
+                        <div class="drag-zone cf">
+                          <div class="drag-item">
+                            <h4 class="clear"></h4>
+                            <img draggable="true" class="drag" data-effect-allowed="all"  src={%static "images/m.jpg" %}/>
+                          </div>
+                          <div class="drag-item">
+                            <h4 class="clear"></h4>
+                            <img draggable="true"  class="drag" data-effect-allowed="all"  src={%static "images/v.jpg" %}/>
+                          </div>
+                          <div class="drag-item">
+                            <h4 class="clear"></h4>
+                            <img draggable="true"  class="drag" data-effect-allowed="all" src={%static "images/z.jpg" %}/>
+                          </div>
+                          <div class="drag-item">
+                            <h4 class="clear"></h4>
+                            <img draggable="true" class="drag" data-effect-allowed="all"  src={%static "images/y.jpg" %}/>
+                          </div>
+                          <div class="drag-item">
+                            <h4 class="clear"></h4>
+                            <img draggable="true" class="drag" data-effect-allowed="all"  src={%static "images/x.jpg" %}/>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="container">
+                        <div class="drop-zone cf">
+
+                          <div class="drop-item">
+                            <h4 class="clear">Step 1</h4>
+                            <div class="drop" data-drop-effect="link"></div>
+                          </div>
+                          <div class="drop-item">
+                            <h4 class="clear">Step 2</h4>
+                            <div class="drop" data-drop-effect="copy"></div>
+
+                          </div>
+                          <div class="drop-item">
+                            <h4 class="clear">Step 3</h4>
+                            <div class="drop" data-drop-effect="move"></div>
+                          </div>
+                          <div class="drop-item">
+                            <h4 class="clear">Step 4</h4>
+                            <div class="drop" data-drop-effect="all"></div>
+                          </div>
+                           <div class="drop-item">
+                            <h4 class="clear">Step 4</h4>
+                            <div class="drop" data-drop-effect="all"></div>
+                          </div>
+
+                        </div>
+                        <div class="reset-button">Reset drag and drop</div>
+                      </div>
+                      <br>
+                     <a href="/example"  class="boxshadow kallyas-button" class="box bg-1" >Let's Explore Some Examples</a>
+
+                    </article>
+                  </article>
+                </article>
+
+                            </section>
+		  </div>
+	
+
+
+
+
+						
+		  
+    
+           
+    
+		   
+			
+		</div>
+	</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+			<script type="text/javascript" src={%static "assets/js/1.js" %}></script>
     </body>
 </html>
